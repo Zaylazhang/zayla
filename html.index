@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display URL Parameters</title>
+</head>
+<body>
+    <h1>显示 URL 参数</h1>
+    <div>Key1: <span id="key1-display"></span></div>
+    <div>Key2: <span id="key2-display"></span></div>
+
+    <script>
+        // 从URL中获取查询参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const key1 = urlParams.get('key1');
+        const key2 = urlParams.get('key2');
+
+        // 将参数值显示在页面上
+        document.getElementById('key1-display').innerText = key1 ? key1 : '未提供';
+        document.getElementById('key2-display').innerText = key2 ? key2 : '未提供';
+    </script>
+</body>
+</html>
