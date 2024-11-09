@@ -39,6 +39,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </script>
 
 <script type="text/javascript"> (function(a,b,c,d,e,f,g){e['ire_o']=c;e[c]=e[c]||function(){(e[c].a=e[c].a||[]).push(arguments)};f=d.createElement(b);g=d.getElementsByTagName(b)[0];f.async=1;f.src=a;g.parentNode.insertBefore(f,g);})('https://utt.impactcdn.com/A2788006-de3d-4011-a57c-c4737e79de0365535.js','script','ire',document,window); ire('identify', {customerid: '' /*INSERT key1*/, customeremail: '' /*INSERT key2*/}); </script>
+
+<script type="text/javascript">
+        // 从 URL 中获取参数值
+        const urlParams = new URLSearchParams(window.location.search);
+        const key1 = urlParams.get('key1'); // 获取 key1 的值
+        const key2 = urlParams.get('key2'); // 获取 key2 的值
+
+        // 传递参数到 JavaScript Tag
+        (function(a,b,c,d,e,f,g){
+            e['ire_o']=c;
+            e[c]=e[c]||function(){
+                (e[c].a=e[c].a||[]).push(arguments)
+            };
+            f=d.createElement(b);
+            g=d.getElementsByTagName(b)[0];
+            f.async=1;
+            f.src=a;
+            g.parentNode.insertBefore(f,g);
+        })('https://utt.impactcdn.com/A2788006-de3d-4011-a57c-c4737e79de0365535.js', 'script', 'ire', document, window);
+
+        // 将提取到的 key1 和 key2 作为 customerid 和 customeremail 传递
+        ire('identify', {
+            customerid: key1 || '', // 将 key1 的值传递到 customerid
+            customeremail: key2 || '' // 将 key2 的值传递到 customeremail
+        });
+    </script>
+</body>    
     
 </body>
 </html>
